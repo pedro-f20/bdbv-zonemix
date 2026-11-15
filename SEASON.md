@@ -6,7 +6,7 @@ Score: CRPS of the samples on log(x+1) (as the backtest), truth = hub release of
 |---|---|---|---|---|---|
 | BDBVHub-baseline | 0.37 | 0.87 | 62 | 62 | 1 |
 | ACCIDDA-Chromantis | 0.91 | 0.91 | 248 | 62 | 1 |
-| ACCIDDA-insightcast | 1.03 | 2.86 | 248 | 62 | 1 |
+| ACCIDDA-insightcast | 1.03 | 1.53 | 248 | 62 | 1 |
 | CEPH-Rtrend_BDBV | 1.73 | 2.15 | 3 | 3 | 1 |
 | MOBS-GLEAM_BDBV | 1.31 | 1.31 | 12 | 4 | 1 |
 | NTUCPH-LLM | 0.87 | 0.86 | 10 | 5 | 1 |
