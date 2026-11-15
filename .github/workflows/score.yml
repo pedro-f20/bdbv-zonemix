@@ -1,0 +1,41 @@
+name: Weekly live score
+
+on:
+  schedule:
+    # The hub's target data lands Monday ~17:00-20:00 UTC, once slipped to Tuesday ~19:00 UTC.
+    # Wednesday's run catches a late drop; nothing is committed when the scores are unchanged.
+    - cron: "23 6 * * 2"
+    - cron: "23 6 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: write  # commits SEASON.md and scores.json
+
+jobs:
+  score:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      - name: Install
+        run: |
+          uv venv --python 3.12
+          uv pip install -r requirements.lock
+
+      - name: Score
+        run: |
+          .venv/bin/python -m unittest test_scoreboard
+          .venv/bin/python scoreboard.py
+
+      - name: Commit scoreboard
+        run: |
+          git add SEASON.md scores.json
+          git diff --cached --quiet && exit 0
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -q -m "Update live scoreboard"
+          git pull -q --rebase
+          git push -q

@@ -12,7 +12,7 @@ Inputs: the hub's target data and delay file, plus INRB's road travel times and 
 
 ## Running
 
-A scheduled GitHub Action runs `submit.sh` from Sunday to Tuesday. Each run forecasts the coming Saturday's round. It does nothing while the hub hasn't opened the round or published the week's release, or once the round is submitted. Otherwise it opens a PR from the `pedro-f20` fork and waits for the hub's validation. From Tuesday morning, if the release isn't complete, it forecasts from the previous one so that no round is skipped, and a later run replaces that PR if the release lands before it is merged. A PR that fails validation is rebuilt. `check.sh` runs on Wednesday and fails if the round isn't in the hub or in an open PR that passed validation. `submissions.csv` lists the rounds.
+A scheduled GitHub Action runs `submit.sh` from Sunday to Tuesday. Each run forecasts the coming Saturday's round. It does nothing while the hub hasn't opened the round or published the week's release, or once the round is submitted. Otherwise it opens a PR from the `pedro-f20` fork and waits for the hub's validation. From Tuesday morning, if the release isn't complete, it forecasts from the previous one so that no round is skipped, and a later run replaces that PR if the release lands before it is merged. A PR that fails validation is rebuilt. `check.sh` runs on Wednesday and fails if the round isn't in the hub or in an open PR that passed validation. `submissions.csv` lists the rounds. `score.yml` runs `scoreboard.py` after each Monday data drop and commits the live scores (`SEASON.md`, `scores.json`).
 
 By hand:
 
