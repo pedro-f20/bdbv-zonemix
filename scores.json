@@ -1,36 +1,36 @@
 {
-  "headline": "Better than 2 of 5 hub models; 63% less error than the baseline",
+  "headline": "Better than 2 of 5 hub models; 44% less error than the baseline",
   "rows": [
     {
       "measure": "Us vs hub baseline",
-      "value": "0.37",
-      "range": "62 cells"
+      "value": "0.56",
+      "range": "187 cells"
     },
     {
       "measure": "Us vs ACCIDDA-Chromantis",
-      "value": "0.91",
-      "range": "248 cells"
+      "value": "1.08",
+      "range": "562 cells"
     },
     {
       "measure": "Us vs ACCIDDA-insightcast",
-      "value": "1.03",
-      "range": "248 cells"
+      "value": "1.10",
+      "range": "562 cells"
     },
     {
       "measure": "Us vs OHTJHU-BM",
-      "value": "0.62",
-      "range": "248 cells"
+      "value": "0.67",
+      "range": "562 cells"
     },
     {
       "measure": "Us vs seabbs-renewal",
-      "value": "1.11",
-      "range": "248 cells"
+      "value": "1.09",
+      "range": "562 cells"
     },
     {
       "measure": "Us vs seabbs-rwnowcast",
-      "value": "1.11",
-      "range": "248 cells"
+      "value": "0.93",
+      "range": "562 cells"
     }
   ],
-  "period": "Nov 2026 rounds, 1 scored, interim; updated 2026-11-15"
+  "period": "Nov 2026 rounds, 2 scored, interim; updated 2026-11-17"
 }
